@@ -90,6 +90,9 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
+# CNE
+BOARD_USES_QCNE := true
+
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
@@ -185,9 +188,12 @@ BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib64/lib-imscamera.so|libshims_camera.so \
+    /system/lib64/lib-imsvideocodec.so|libshims_ims.so \
     /system/vendor/lib64/libflp.so|libshims_flp.so \
     /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so
+
+# Telephony
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Vendor Unification Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8916

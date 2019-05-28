@@ -156,7 +156,8 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8916 \
     libgenlock \
     copybit.msm8916 \
-    memtrack.msm8916
+    memtrack.msm8916 \
+    libqdMetaData.system
 
 # FM
 PRODUCT_PACKAGES += \
@@ -196,6 +197,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0
+
+# IMS
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    libshim_ims
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -238,6 +244,15 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Netutils
+PRODUCT_PACKAGES += \
+    netutils-wrapper-1.0 \
+    android.system.net.netd@1.0
+
+PRODUCT_PACKAGES += \
+   libandroid_net \
+   libandroid_net_32
+
 # Optimize
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
@@ -262,6 +277,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     init.qcom.rc \
+    init.qcom.sh \
     init.qcom.power.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
@@ -273,6 +289,13 @@ PRODUCT_PACKAGES += \
     librecovery_updater_asus \
     resize2fs_static
 
+# RCS
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    rcs_service_aidl \
+    rcs_service_aidl.xml \
+    rcs_service_api \
+    rcs_service_api.xml
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
@@ -281,7 +304,9 @@ PRODUCT_PACKAGES += \
 	
 # RIL
 PRODUCT_PACKAGES += \
+    libcnefeatureconfig \
     librmnetctl \
+    libtinyxml \
     libxml2
 
 # Seccomp
